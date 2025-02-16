@@ -5,7 +5,7 @@ const tweetBtn = document.getElementById("tweet-btn");
 
 document.addEventListener("click", function(e){
     if (e.target.dataset.reply) {
-        
+        handleReplyClick(e.target.dataset.reply);
     } else if (e.target.dataset.like) {
         handleLikeClick(e.target.dataset.like);
     } else if (e.target.dataset.retweet) {
@@ -14,6 +14,10 @@ document.addEventListener("click", function(e){
 
     };
 });
+
+function handleReplyClick(replyId) {
+    document.getElementById(`replies-${replyId}`).classList.toggle("hidden");
+};
 
 function handleLikeClick (tweetId) {
     const targetTweetObj = tweetsData.filter(function(tweet){
@@ -104,7 +108,7 @@ function getFeedHtml() {
                     </div>   
                 </div>            
             </div>
-            <div id="replies-${tweet.uuid}">
+            <div class="hidden" id="replies-${tweet.uuid}">
                 ${repliesHtml}
             </div>
         </div>
