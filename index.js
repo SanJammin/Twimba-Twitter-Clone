@@ -7,6 +7,22 @@ tweetBtn.addEventListener("click", function() {
 
 });
 
+document.addEventListener("click", function(e){
+    if (e.target.dataset.reply) {
+        
+    } else if (e.target.dataset.like) {
+        handleLikeClick(e.target.dataset.like);
+    } else if (e.target.dataset.retweet) {
+
+    } else if (e.target.tweetBtn) {
+
+    };
+});
+
+function handleLikeClick (tweetId) {
+
+};
+
 function getFeedHtml() {
     let feedHtml = ``;
 
