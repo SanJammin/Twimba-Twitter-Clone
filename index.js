@@ -37,3 +37,9 @@ function getFeedHtml() {
 
     return feedHtml;
 };
+
+function render() {
+    document.getElementById("feed").innerHTML = getFeedHtml();
+}
+
+render();
